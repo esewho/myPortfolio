@@ -1,3 +1,4 @@
+import CodeTerminal from "./components/CodeTerminal"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 
