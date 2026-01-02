@@ -4,11 +4,13 @@ import CodeTerminal from "./CodeTerminal"
 import { Github, Mail, Contact } from "lucide-react"
 import AboutMe from "./AboutMe"
 import ProjectCard from "./ProjectCard"
+import PipBoyFrame from "./PipBoyFrame"
 
 const roles = ["Full Stack Developer", "Autodidacta", "Problem Solver"]
 
 export default function Hero() {
 	const [index, setIndex] = useState(0)
+	const [isOn, setIsOn] = useState(false)
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -106,16 +108,28 @@ export default function Hero() {
 			</div>
 
 			{/* BLOQUE INFERIOR – TERMINAL */}
+
 			<motion.div
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ delay: 0.6 }}
 				className="w-full max-w-4xl mx-auto"
 			>
-				<CodeTerminal />
+				<button
+					className="font-mono px-6 py-2 rounded
+					border border-green-500 text-green-400
+					hover:bg-green-500/10 transition cursor-pointer "
+					onClick={() => setIsOn((prev) => !prev)}
+				>
+					{isOn ? "POWER OFF" : "POWER ON"}
+				</button>
+				<PipBoyFrame isOn={isOn}>
+					<CodeTerminal />
+				</PipBoyFrame>
 			</motion.div>
 			{/* ABOUT ME SECTION */}
 			<motion.div
+				id="about"
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ delay: 0.8 }}
@@ -130,7 +144,7 @@ export default function Hero() {
 				transition={{ delay: 1.0 }}
 				className="w-full max-w-full mx-auto"
 			>
-				<section className="w-full py-32">
+				<section id="projects" className="w-full my-2">
 					<h2 className="font-mono text-3xl text-white mb-16 text-center">
 						Projects
 					</h2>

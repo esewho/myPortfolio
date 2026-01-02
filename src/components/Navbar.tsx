@@ -1,42 +1,18 @@
 export default function Navbar() {
 	return (
-		<div className="flex flex-row sticky top-0 z-50">
-			<div className="bg-gray-900 p-4 w-full ">
-				<ul className="flex space-x-4 items-center justify-around">
-					<li>
+		<div className="sticky top-0 z-50 bg-gray-900">
+			<ul className="flex items-center justify-around p-4 font-mono">
+				{["home", "about", "projects", "contact"].map((item) => (
+					<li key={item} className="cursor-pointer">
 						<a
-							href="/home"
-							className="text-green-400 hover:text-green-600 font-mono"
+							href={`#${item}`}
+							className="text-green-400 hover:text-green-600 transition"
 						>
-							Home
+							{item.toUpperCase()}
 						</a>
 					</li>
-					<li>
-						<a
-							href="/about"
-							className="text-green-400 hover:text-green-600 font-mono"
-						>
-							About
-						</a>
-					</li>
-					<li>
-						<a
-							href="/projects"
-							className="text-green-400 hover:text-green-600 font-mono"
-						>
-							Projects
-						</a>
-					</li>
-					<li>
-						<a
-							href="/contact"
-							className="text-green-400 hover:text-green-600 font-mono"
-						>
-							Contact
-						</a>
-					</li>
-				</ul>
-			</div>
+				))}
+			</ul>
 		</div>
 	)
 }
