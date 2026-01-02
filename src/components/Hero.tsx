@@ -118,7 +118,7 @@ export default function Hero() {
 				<button
 					className="font-mono px-6 py-2 rounded
 					border border-green-500 text-green-400
-					hover:bg-green-500/10 transition cursor-pointer "
+					hover:bg-green-500/10 transition cursor-pointer mb-4  "
 					onClick={() => setIsOn((prev) => !prev)}
 				>
 					{isOn ? "POWER OFF" : "POWER ON"}
