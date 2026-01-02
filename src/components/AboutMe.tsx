@@ -31,7 +31,7 @@ export default function AboutMe() {
 				{/* CONTENEDOR DERECHO */}
 				<div
 					className="w-full h-full max-h-[520px] flex flex-col lg:flex-row justify-center items-center gap-8
-					bg-gray-900/50 p-6 rounded-xl border border-green-500/20"
+					bg-black p-6 rounded-xl border border-green-500/20"
 				>
 					<img
 						src="/pngegg.png"
